@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100">
+  <defs>
+    <linearGradient id="body" x1="0.85" y1="0.1" x2="0.15" y2="0.95">
+      <stop offset="0" stop-color="#C24FF0"/>
+      <stop offset="0.35" stop-color="#F26BD8"/>
+      <stop offset="0.65" stop-color="#FF6F8E"/>
+      <stop offset="1" stop-color="#F9A24C"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0.32" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#FFD3EE" stop-opacity=".85"/>
+      <stop offset="0.45" stop-color="#FFB0DD" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#FFB0DD" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shade" cx="0.7" cy="0.78" r="0.6">
+      <stop offset="0" stop-color="#FF4F6E" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#FF4F6E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FBC46A"/>
+      <stop offset="0.35" stop-color="#FF8A8A"/>
+      <stop offset="0.7" stop-color="#F06BD6"/>
+      <stop offset="1" stop-color="#B357E6"/>
+    </linearGradient>
+    <clipPath id="front"><rect x="-70" y="0" width="140" height="40"/></clipPath>
+    <clipPath id="back"><rect x="-70" y="-40" width="140" height="40"/></clipPath>
+  </defs>
+
+  <!-- anillo (parte de atrás) -->
+  <g transform="translate(60 56) rotate(-24)">
+    <ellipse rx="54" ry="14" fill="none" stroke="url(#ring)" stroke-width="7" clip-path="url(#back)" opacity=".9"/>
+  </g>
+
+  <!-- planeta -->
+  <circle cx="60" cy="52" r="33" fill="url(#body)"/>
+  <circle cx="60" cy="52" r="33" fill="url(#shade)"/>
+  <circle cx="60" cy="52" r="33" fill="url(#shine)"/>
+
+  <!-- anillo (parte de adelante) -->
+  <g transform="translate(60 56) rotate(-24)">
+    <ellipse rx="54" ry="14" fill="none" stroke="url(#ring)" stroke-width="7" clip-path="url(#front)"/>
+    <ellipse rx="54" ry="14" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6" clip-path="url(#front)" transform="translate(0 -2)"/>
+  </g>
+
+  <!-- brillos -->
+  <circle cx="74" cy="34" r="1.6" fill="#fff" opacity=".9"/>
+  <circle cx="46" cy="68" r="1.2" fill="#fff" opacity=".8"/>
+  <circle cx="22" cy="80" r="1.2" fill="#fff" opacity=".8"/>
+
+  <!-- estrella -->
+  <path d="M86 4 l2.6 5.4 5.9 .8 -4.3 4.1 1 5.9 -5.2 -2.8 -5.2 2.8 1 -5.9 -4.3 -4.1 5.9 -.8z" fill="#fff"/>
+</svg>
