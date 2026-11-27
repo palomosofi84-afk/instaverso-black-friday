@@ -28,7 +28,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  img{max-width:100%;display:block}
+  img{max-width:100%;height:auto;display:block}
   a{color:inherit}
   .wrap{width:min(1080px,100% - 40px);margin-inline:auto}
   .narrow{width:min(760px,100% - 40px);margin-inline:auto}
@@ -77,6 +77,30 @@
   .gift{display:flex;gap:14px;align-items:flex-start;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;max-width:520px;margin:0 auto 30px}
   .gift-ico{font-size:28px;line-height:1}
   .gift p{margin:0;color:var(--muted);font-size:15.5px}
+  .gift a{color:var(--pink);font-weight:700;text-decoration:none;white-space:nowrap}
+
+  /* Bonus 3 clases */
+  .bonus{position:relative;overflow:hidden;padding:40px 0 90px}
+  .bonus::before{content:"";position:absolute;left:50%;top:48%;width:1100px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(150,40,110,.28),rgba(80,20,70,.12) 55%,transparent 80%);pointer-events:none}
+  .bonus > .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:center}
+  .bonus-img{width:100%;max-width:560px;margin-inline:auto;
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 94%,transparent 100%);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 94%,transparent 100%);
+    mask-composite:intersect}
+  .bonus h2{font-size:clamp(28px,4vw,40px)}
+  .classes{list-style:none;display:grid;gap:12px;margin:24px 0 26px}
+  .classes li{display:flex;gap:16px;align-items:center;background:rgba(17,17,17,.85);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .classes .num{flex:0 0 40px;height:40px;border-radius:12px;background:var(--grad);color:#000;font-weight:800;display:grid;place-items:center;font-size:18px}
+  .classes b{display:block;font-size:17.5px;line-height:1.3}
+  .classes span{color:var(--muted);font-size:15.5px;line-height:1.4}
+  .bonus-note{font-size:14.5px;margin-top:12px}
+  @media (max-width:860px){
+    .bonus > .wrap{grid-template-columns:1fr;gap:0}
+    .bonus-img{max-width:480px}
+    .bonus-text{text-align:center;margin-top:-10px}
+    .classes{text-align:left}
+  }
 
   /* Countdown */
   .countdown{display:flex;justify-content:center;gap:12px;margin:0 auto 30px}
@@ -207,7 +231,7 @@
 
     <div class="gift">
       <div class="gift-ico">🎁</div>
-      <p><strong>Bonus exclusivo:</strong> si entras durante la promo recibes <strong>3 clases nuevas de regalo</strong>, diseñadas solo para esta ocasión.</p>
+      <p><strong>Bonus exclusivo:</strong> si entras durante la promo recibes <strong>3 clases nuevas de regalo</strong> con Jessica Castrillón, Juliana Cantillo y Víctor Pay. <a href="#bonus">Ver las clases ↓</a></p>
     </div>
 
     <p class="deadline">La oferta termina en:</p>
@@ -222,6 +246,25 @@
     <p class="btn-note">Del viernes 27 al lunes 30 de noviembre a las 11:59 p. m.</p>
   </div>
 </header>
+
+<!-- BONUS -->
+<section class="bonus" id="bonus">
+  <div class="wrap">
+    <img class="bonus-img" src="assets/bonus-3-clases.webp" alt="Tres clases adicionales que vas a recibir si entras a Instaverso: Jessica Castrillón, Juliana Cantillo y Víctor Pay" width="1080" height="1440" loading="lazy">
+    <div class="bonus-text">
+      <span class="eyebrow grad-text">🎁 Bonus exclusivo de Black Friday</span>
+      <h2>3 clases nuevas de regalo, solo si entras ahora</h2>
+      <p>Diseñadas especialmente para esta promo. Las recibes además de todo lo que ya incluye Instaverso.</p>
+      <ul class="classes">
+        <li><div class="num">1</div><div><b>Jessica Castrillón</b><span>Edita tus carruseles con Claude desde cero</span></div></li>
+        <li><div class="num">2</div><div><b>Juliana Cantillo</b><span>Clase CapCut Pro</span></div></li>
+        <li><div class="num">3</div><div><b>Víctor Pay</b><span>Aprende a utilizar la IA para tu negocio</span></div></li>
+      </ul>
+      <a class="btn" href="#comprar" target="_blank" rel="noopener">QUIERO MIS 3 CLASES DE REGALO →</a>
+      <p class="bonus-note">Solo para quien entre del 27 al 30 de noviembre.</p>
+    </div>
+  </div>
+</section>
 
 <!-- PAIN -->
 <section class="pain">
