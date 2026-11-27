@@ -244,8 +244,17 @@
   .inc-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
   .inc-num{flex:0 0 46px;height:46px;border-radius:14px;background:var(--grad);color:#000;font-weight:800;font-size:20px;display:grid;place-items:center}
   .inc-head h3{font-size:clamp(21px,2.6vw,26px);line-height:1.25;padding-top:6px}
-  .gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--purple) transparent}
-  .gallery img{flex:0 0 min(78%,470px);scroll-snap-align:center}
+  html{overflow-x:clip}
+  .marquee{overflow:hidden;padding:10px 0 18px;margin-inline:calc(50% - 50vw);
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);
+    mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%)}
+  .marquee-track{display:flex;width:max-content;animation:slide var(--dur,60s) linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-group{display:flex;gap:18px;padding-right:18px;flex-shrink:0}
+  .marquee-group img{height:320px;width:auto;max-width:none}
+  @keyframes slide{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  @media (max-width:600px){.marquee-group img{height:220px}.marquee-group{gap:12px;padding-right:12px}}
+  @media (prefers-reduced-motion:reduce){.marquee-track{animation-duration:180s}}
   .shot{border-radius:18px;border:1px solid #2c2c2c;box-shadow:0 0 0 1px rgba(215,124,222,.12),0 12px 40px rgba(215,124,222,.14);background:#fff}
   .swipe{font-size:13.5px;color:var(--muted);margin-top:4px}
   .single{max-width:min(620px,100%)}
@@ -351,24 +360,42 @@
 
     <div class="inc">
       <div class="inc-head"><div class="inc-num">1</div><h3>+55 clases en video</h3></div>
-      <div class="gallery">
-        <img class="shot" src="../assets/v3/clase-configurar-cuenta.webp" alt="Clase: Cómo configurar correctamente tu cuenta" width="1100" height="882" loading="lazy">
-        <img class="shot" src="../assets/v3/clase-reels.webp" alt="Clase: Reels" width="1100" height="989" loading="lazy">
-        <img class="shot" src="../assets/v3/clase-analisis-edicion.webp" alt="Clase: Análisis y consejos de edición" width="1100" height="1020" loading="lazy">
-        <img class="shot" src="../assets/v3/clase-capcut.webp" alt="Clase: Edita desde cero en CapCut" width="1100" height="841" loading="lazy">
-        <img class="shot" src="../assets/v3/clase-carruseles.webp" alt="Clase: Cómo diseñar carruseles creativos" width="1100" height="996" loading="lazy">
+      <div class="marquee" style="--dur:70s">
+        <div class="marquee-track">
+          <div class="marquee-group">
+          <img class="shot" src="../assets/v3/clase-configurar-cuenta.webp" alt="Clase: Cómo configurar correctamente tu cuenta" width="1100" height="882">
+          <img class="shot" src="../assets/v3/clase-reels.webp" alt="Clase: Reels" width="1100" height="989">
+          <img class="shot" src="../assets/v3/clase-analisis-edicion.webp" alt="Clase: Análisis y consejos de edición" width="1100" height="1020">
+          <img class="shot" src="../assets/v3/clase-capcut.webp" alt="Clase: Edita desde cero en CapCut" width="1100" height="841">
+          <img class="shot" src="../assets/v3/clase-carruseles.webp" alt="Clase: Cómo diseñar carruseles creativos" width="1100" height="996">
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+          <img aria-hidden="true" class="shot" src="../assets/v3/clase-configurar-cuenta.webp" alt="" width="1100" height="882">
+          <img aria-hidden="true" class="shot" src="../assets/v3/clase-reels.webp" alt="" width="1100" height="989">
+          <img aria-hidden="true" class="shot" src="../assets/v3/clase-analisis-edicion.webp" alt="" width="1100" height="1020">
+          <img aria-hidden="true" class="shot" src="../assets/v3/clase-capcut.webp" alt="" width="1100" height="841">
+          <img aria-hidden="true" class="shot" src="../assets/v3/clase-carruseles.webp" alt="" width="1100" height="996">
+          </div>
+        </div>
       </div>
-      <p class="swipe">Desliza para ver más →</p>
     </div>
 
     <div class="inc">
       <div class="inc-head"><div class="inc-num">2</div><h3>Revisión de perfiles en vivo y sesiones de Q&amp;A con Danii</h3></div>
-      <div class="gallery">
-        <img class="shot" src="../assets/v3/qa-banner.webp" alt="Q&amp;A en vivo con Danii" width="1100" height="730" loading="lazy">
-        <img class="shot" src="../assets/v3/qa-en-vivo.webp" alt="Grabación de un Q&amp;A en vivo con Danii" width="1100" height="897" loading="lazy">
-        <img class="shot" src="../assets/v3/revision-perfiles.webp" alt="Grabación de una revisión de perfiles en vivo" width="1100" height="872" loading="lazy">
+      <div class="marquee" style="--dur:42s">
+        <div class="marquee-track">
+          <div class="marquee-group">
+          <img class="shot" src="../assets/v3/qa-banner.webp" alt="Q&amp;A en vivo con Danii" width="1100" height="730">
+          <img class="shot" src="../assets/v3/qa-en-vivo.webp" alt="Grabación de un Q&amp;A en vivo con Danii" width="1100" height="897">
+          <img class="shot" src="../assets/v3/revision-perfiles.webp" alt="Grabación de una revisión de perfiles en vivo" width="1100" height="872">
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+          <img aria-hidden="true" class="shot" src="../assets/v3/qa-banner.webp" alt="" width="1100" height="730">
+          <img aria-hidden="true" class="shot" src="../assets/v3/qa-en-vivo.webp" alt="" width="1100" height="897">
+          <img aria-hidden="true" class="shot" src="../assets/v3/revision-perfiles.webp" alt="" width="1100" height="872">
+          </div>
+        </div>
       </div>
-      <p class="swipe">Desliza para ver más →</p>
     </div>
 
     <div class="inc">
