@@ -50,7 +50,12 @@
   .btn-note{font-size:14px;color:var(--muted);margin-top:12px}
 
   /* Top bar */
-  .topbar{background:var(--grad);color:#000;text-align:center;font-weight:700;font-size:14px;padding:9px 16px}
+  .topbar{background:var(--grad);color:#000;overflow:hidden;white-space:nowrap;padding:12px 0;border-bottom:2px solid #000}
+  .ribbon-track{display:flex;width:max-content;animation:ribbon 22s linear infinite}
+  .ribbon-group{display:flex;flex-shrink:0}
+  .ribbon-item{font-weight:800;font-size:18px;letter-spacing:.08em;padding:0 18px;display:inline-flex;align-items:center;gap:36px}
+  .ribbon-item::after{content:"✦";font-size:14px}
+  @keyframes ribbon{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
   /* Hero */
   .hero{padding:56px 0 72px;text-align:center;position:relative;overflow:hidden}
@@ -170,7 +175,16 @@
 </head>
 <body>
 
-<div class="topbar">🖤 BLACK FRIDAY · Solo hasta el lunes 30 de noviembre a las 11:59 p. m.</div>
+<div class="topbar" role="marquee" aria-label="Black Friday">
+  <div class="ribbon-track" aria-hidden="true">
+    <div class="ribbon-group">
+      <span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span>
+    </div>
+    <div class="ribbon-group">
+      <span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span><span class="ribbon-item">BLACK FRIDAY</span>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <header class="hero">
