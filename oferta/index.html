@@ -265,11 +265,9 @@
   .proofs{columns:2 360px;column-gap:18px;margin-top:32px}
   .proofs img{width:100%;margin-bottom:18px;break-inside:avoid}
   .danii{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
-  .danii-photo{width:100%;max-width:440px;margin-inline:auto;
-    -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%),linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);
-    -webkit-mask-composite:source-in;
-    mask-image:linear-gradient(to bottom,#000 70%,transparent 100%),linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);
-    mask-composite:intersect}
+  .danii-photo{width:100%;max-width:420px;margin-inline:auto;border-radius:22px;padding:3px;background:var(--grad);box-shadow:0 20px 60px rgba(215,124,222,.25)}
+  .danii-photo img{width:100%;border-radius:19px}
+  .danii-photo figcaption{font-size:13.5px;color:var(--muted);text-align:center;padding:10px 8px 8px;background:#0b0b0b;border-radius:0 0 19px 19px;margin-top:-19px;padding-top:27px}
   .danii p{font-size:17.5px}
   .award{margin-top:22px;border-radius:18px;padding:2px;background:var(--grad)}
   .award-in{background:#0b0b0b;border-radius:16px;padding:20px 22px;display:flex;gap:16px;align-items:center}
@@ -408,6 +406,25 @@
         <span class="chip"><b>Caro Calle</b> · De emprendedor a empresario</span>
         <span class="chip"><b>Vanesa Vargas</b> · Finanzas</span>
         <span class="chip"><b>Daniela Lamour</b> · Tu presencia atrae</span>
+        <span class="chip"><b>Angely Espinosa</b> · YouTube para negocios</span>
+      </div>
+      <div class="marquee" style="--dur:70s">
+        <div class="marquee-track">
+          <div class="marquee-group">
+          <img class="shot" src="../assets/v3/mentor-migue.webp" alt="Clase en vivo: Storytelling para tu marca o negocio, con Migue" width="900" height="826">
+          <img class="shot" src="../assets/v3/mentor-caro.webp" alt="Clase en vivo: De emprendedor a empresario, con Caro Calle" width="900" height="688">
+          <img class="shot" src="../assets/v3/mentor-vanesa.webp" alt="Clase en vivo: Cuentas claras, bolsillo tranquilo, con Vanesa Vargas" width="900" height="760">
+          <img class="shot" src="../assets/v3/mentor-daniela.webp" alt="Clase en vivo: Tu presencia atrae, con Daniela Lamour" width="900" height="679">
+          <img class="shot" src="../assets/v3/mentor-youtube.webp" alt="Clase en vivo: YouTube para negocios o futuros youtubers" width="900" height="800">
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+          <img aria-hidden="true" class="shot" src="../assets/v3/mentor-migue.webp" alt="" width="900" height="826">
+          <img aria-hidden="true" class="shot" src="../assets/v3/mentor-caro.webp" alt="" width="900" height="688">
+          <img aria-hidden="true" class="shot" src="../assets/v3/mentor-vanesa.webp" alt="" width="900" height="760">
+          <img aria-hidden="true" class="shot" src="../assets/v3/mentor-daniela.webp" alt="" width="900" height="679">
+          <img aria-hidden="true" class="shot" src="../assets/v3/mentor-youtube.webp" alt="" width="900" height="800">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -443,7 +460,7 @@
 <!-- DANII -->
 <section style="background:var(--card-2)">
   <div class="wrap danii">
-    <img class="danii-photo" src="../assets/v3/danii-retrato.webp" alt="Danii" width="770" height="941" loading="lazy">
+    <figure class="danii-photo"><img src="../assets/v3/danii-hormozi.webp" alt="Danii con el trofeo de los Skool Games" width="900" height="1196" loading="lazy"><figcaption>🏆 Recibiendo el premio de los Skool Games en Los Ángeles</figcaption></figure>
     <div>
       <span class="eyebrow grad-text">Quién te acompaña</span>
       <h2>Soy Danii</h2>
